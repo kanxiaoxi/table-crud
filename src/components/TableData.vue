@@ -62,7 +62,11 @@
       </div>
     </el-dialog>
 
-    <el-dialog title="添加条目" :visible.sync="showAddDialog">
+    <el-dialog
+      custom-class="custom-width"
+      title="添加条目"
+      :visible.sync="showAddDialog"
+    >
       <el-form :model="addForm" :rules="formRules" ref="addFormRef">
         <el-form-item
           label="部门"
@@ -228,9 +232,6 @@ export default {
   }
   & .el-select {
     width: 100%;
-  }
-  & .el-dialog {
-    width: 500px;
   }
 }
 </style>
