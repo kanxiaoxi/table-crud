@@ -61,7 +61,7 @@
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
-        <el-button @click="showEditDialog = false">取 消</el-button>
+        <el-button @click="cancleEditDialog">取 消</el-button>
         <el-button type="primary" @click="handleEditComfirm">确 定</el-button>
       </div>
     </el-dialog>
@@ -99,7 +99,7 @@
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
-        <el-button @click="showAddDialog = false">取 消</el-button>
+        <el-button @click="cancleAddDialog">取 消</el-button>
         <el-button type="primary" @click="handleAddConfirm">确 定</el-button>
       </div>
     </el-dialog>
@@ -219,6 +219,14 @@ export default {
           message: "添加条目成功!",
         });
       });
+    },
+    cancleAddDialog() {
+      this.showAddDialog = false;
+      this.$refs.addFormRef.resetFields();
+    },
+    cancleEditDialog() {
+      this.showEditDialog = false;
+      this.$refs.editFormRef.resetFields();
     },
   },
 };
