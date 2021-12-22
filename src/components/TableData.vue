@@ -33,7 +33,11 @@
         </template>
       </el-table-column>
     </el-table>
-    <el-dialog title="修改条目" :visible.sync="showEditDialog">
+    <el-dialog
+      custom-class="custom-width"
+      title="修改条目"
+      :visible.sync="showEditDialog"
+    >
       <el-form :model="editForm" :rules="formRules" ref="editFormRef">
         <el-form-item label="部门" :label-width="formLabelWidth">
           <el-select v-model="editForm.department" placeholder="请选择部门">
